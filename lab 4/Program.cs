@@ -162,7 +162,7 @@ namespace ConsoleApp2
             }
 
             //task
-            public void var1(int data)
+            public void Var1(int data)
             {
                 if(data < 0)
                 {
@@ -181,7 +181,7 @@ namespace ConsoleApp2
                 Node current = head;
                 if (head == null)
                 {
-                    Console.WriteLine("Пустой список");
+                    Console.WriteLine("Empty list");
                 }
                 else
                 {
@@ -198,7 +198,7 @@ namespace ConsoleApp2
 
         static void Main(string[] args)
         {
-            DoubleLinkedList bruh = new DoubleLinkedList();
+            DoubleLinkedList Bruh = new DoubleLinkedList();
             Console.WriteLine("-----------------------------------------");
             Console.WriteLine("add 1 ---> добавить первый элемент");
             Console.WriteLine("add inf ---> добавить первый элемент");
@@ -221,40 +221,40 @@ namespace ConsoleApp2
                     {
                         case "add 1":
                             Console.Write("Введите элемент: ");
-                            bruh.AddFirst(int.Parse(Console.ReadLine()));
-                            bruh.Print();
+                            Bruh.AddFirst(int.Parse(Console.ReadLine()));
+                            Bruh.Print();
                             break;
                         case "add inf":
                             Console.Write("Введите элемент: ");
-                            bruh.AddLast(int.Parse(Console.ReadLine()));
-                            bruh.Print();
+                            Bruh.AddLast(int.Parse(Console.ReadLine()));
+                            Bruh.Print();
                             break;
                         case "add bruh":
                             Console.Write("Введите элемент: ");
                             int elem = int.Parse(Console.ReadLine());
                             Console.Write("Введите позицию: ");
                             int posit = int.Parse(Console.ReadLine());
-                            bruh.AddAtPosition(elem, posit);
-                            bruh.Print();
+                            Bruh.AddAtPosition(elem, posit);
+                            Bruh.Print();
                             break;
                         case "del 1":
-                            bruh.DeleteFirst();
-                            bruh.Print();
+                            Bruh.DeleteFirst();
+                            Bruh.Print();
                             break;
                         case "del last":
-                            bruh.DeleteLast();
-                            bruh.Print();
+                            Bruh.DeleteLast();
+                            Bruh.Print();
                             break;
                         case "del bruh":
                             Console.Write("Введите позицию: ");
                             int position = int.Parse(Console.ReadLine());
-                            bruh.DeleteAtPosition(position);
-                            bruh.Print();
+                            Bruh.DeleteAtPosition(position);
+                            Bruh.Print();
                             break;
                         case "var1":
                             Console.Write("Введите элемент: ");
-                            bruh.var1(int.Parse(Console.ReadLine()));
-                            bruh.Print();
+                            Bruh.Var1(int.Parse(Console.ReadLine()));
+                            Bruh.Print();
                             break;
                         case "shutdown":
                             System.Environment.Exit(0);
