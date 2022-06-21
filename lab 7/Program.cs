@@ -119,10 +119,18 @@ namespace Lab_7
             }
 
             Entry.Node current = table[ke.getHash(size)].head;
-            if (current.key.bookID == ke.bookID)
+            if (table[ke.getHash(size)].size == 1)
             {
                 table[ke.getHash(size)].head = current.prev;
                 table[ke.getHash(size)] = null;
+                return;
+            }
+            if (current.key.bookID == ke.bookID)
+            {
+                table[ke.getHash(size)].head = current.prev;
+                keys.Remove(int.Parse(current.key.bookID));
+                table[ke.getHash(size)].size--;
+                Console.WriteLine("Відповідна книга була видалена");
                 return;
             }
             for (int i = 1; i < table[ke.getHash(size)].size; i++)
@@ -130,7 +138,7 @@ namespace Lab_7
                 if (current.prev.key.bookID == ke.bookID)
                 {
                     current.prev = current.prev.prev;
-                    keys.Remove(int.Parse(current.key.bookID));
+                    keys.Remove(int.Parse(current.prev.key.bookID));
                     table[ke.getHash(size)].size--;
                     Console.WriteLine("Відповідна книга була видалена");
                     return;
